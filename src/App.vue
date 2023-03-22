@@ -7,12 +7,14 @@ import TheWelcome from './components/TheWelcome.vue'
   <header>
     <img alt="iPhone Photography School" class="logo" src="./assets/images/ips-logo.svg" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    
   </header>
 
   <main>
+
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+    </div>
     <TheWelcome />
   </main>
 </template>
