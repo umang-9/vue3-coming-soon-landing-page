@@ -11,9 +11,11 @@ import Header from './components/Header.vue'
 
   <main>
 
-    <div class="wrapper d-flex align-items-center">
-      <SignUpForm msg="You did it!" />
-      <Carousel />
+    <div class="wrapper">
+      <div class="container d-flex align-items-center">
+        <SignUpForm msg="You did it!" />
+        <Carousel />
+      </div>
     </div>
     
       
