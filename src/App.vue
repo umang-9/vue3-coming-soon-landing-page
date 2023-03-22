@@ -1,22 +1,24 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import SignUpForm from './components/SignUpForm.vue'
+import Carousel from './components/Carousel.vue'
+import Header from './components/Header.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="iPhone Photography School" class="logo" src="./assets/images/ips-logo.svg" />
-
-    
-  </header>
+  <!-- Header start -->
+  <Header />
+  <!-- Header end -->
 
   <main>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div class="wrapper d-flex align-items-center">
+      <SignUpForm msg="You did it!" />
+      <Carousel />
     </div>
-    <TheWelcome />
+    
+      
   </main>
+
 </template>
 
 <style scoped>
