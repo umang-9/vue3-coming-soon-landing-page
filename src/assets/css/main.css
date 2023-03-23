@@ -31,7 +31,7 @@
       url('../fonts/Montserrat-Medium.woff2') format('woff2'),
       url('../fonts/Montserrat-Medium.woff') format('woff'),
       url('../fonts/Montserrat-Medium.svg#Montserrat-Medium') format('svg');
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -91,7 +91,7 @@
       url('../fonts/OpenSans-Medium.woff2') format('woff2'),
       url('../fonts/OpenSans-Medium.woff') format('woff'),
       url('../fonts/OpenSans-Medium.svg#OpenSans-Medium') format('svg');
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -114,7 +114,67 @@ header {
 
 
 /* Main page content css start  */
-
+.wrapper {
+  padding: 0 0 100px;
+}
+.sub-title {
+  border-radius: 15px;
+  background-color: var(--color-background-green);
+  font-size: 12px;
+  display: inline-block;
+  line-height: 12px;
+  letter-spacing: 2px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 16px;
+}
+.title {
+  margin-bottom: 30px;
+}
+.sign-up-form {
+  max-width: 440px;
+}
+.form-control-wrap {
+  position: relative;
+}
+.form-control-wrap:after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/mail-icon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.sign-up-form form input[type="email"] {
+  padding-right: 40px;
+}
+.form-button {
+  border-radius: 6px;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+.form-button:before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  z-index: -1;
+  margin: -1px; /* !importanté */
+  border-radius: inherit; /* !importanté */
+  background: linear-gradient(135deg, #D41C3D 0%, #861B83 100%);
+}
+.form-button .btn-primary {
+  border: none;
+}
 /* Main page content css end  */
 
 
