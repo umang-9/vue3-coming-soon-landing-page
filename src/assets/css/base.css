@@ -189,7 +189,7 @@ form input[type="email"]:focus {
   padding: 16px 20px;
   color: #EEECEC;
   line-height: 1.4;
-  margin-bottom: 15px;
+  width: 100%;
 }
 
 .form-control:focus {
@@ -239,11 +239,11 @@ input:-moz-placeholder { /* Firefox 18- */
 .btn-primary {
   color: #EEECEC;
   background: linear-gradient(135deg, #370C14 0%, #280C23 100%);
-  /* border-color: #D41C3D; */
+  border-color: #D41C3D;
   border: 1px solid;
-  /* border-image-slice: 1; */
-  /* border-width: 1px; */
-  /* border-image-source: linear-gradient(to left, #D41C3D, #861B83); */
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to left, #D41C3D, #861B83);
 }
 .btn-primary:active, 
 .btn-primary:focus,

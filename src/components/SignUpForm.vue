@@ -1,24 +1,42 @@
+<script setup>
+const emit = defineEmits({
+  // No validation
+  click: null,
 
+  // Validate submit event
+  submit: ({ email }) => {
+    if (email && password) {
+      return true
+    } else {
+      console.warn('Invalid submit event payload!')
+      return false
+    }
+  }
+})
+
+function submitForm(email, password) {
+  emit('submit', { email, password })
+}
+</script>
 
 export default {
-  data () {
-    return {
-      errors: [],
-      email: null,
+  emits: {
+    // No validation
+    click: null,
+
+    // Validate submit event
+    submit: ({ email }) => {
+      if (email) {
+        return true
+      } else {
+        console.warn('Invalid submit event payload!')
+        return false
+      }
     }
   },
   methods: {
-    checkForm: function(e) {
-      e.preventDefualt();
-      this.errors = [];
-      if(!this.email){
-        this.errors.push("Email required.");
-      } else 
-      if(!this.validEmail(this.email)){
-        this.errors.push("Valid email required.")
-      } else {
-        this.$router.push('/thank-you');
-      }
+    submitForm(email) {
+      this.$emit('submit', { email })
     }
   }
 }
@@ -40,7 +58,7 @@ export default {
         </div>
       </form> -->
 
-      <form id="app" @submit="checkForm" novalidate="true">
+      <form id="app" @submit="$emit('submitForm')" novalidate="true">
           <div class="form-control-wrap">
             <input type="email" name="email" id="email" v-model="email">
           </div>

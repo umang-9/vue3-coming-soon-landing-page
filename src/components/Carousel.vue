@@ -1,6 +1,6 @@
 <script lang="ts">
   import { defineComponent, ref } from 'vue'
-  import SwiperClass, { Navigation, Thumbs } from 'swiper'
+  import SwiperClass, { Navigation, Pagination, Thumbs, EffectFade, Autoplay } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'
   import 'swiper/css/navigation'
@@ -21,9 +21,10 @@
       }
 
       return {
-        modules: [Navigation, Thumbs],
+        modules: [Navigation, Pagination, Thumbs, EffectFade, Autoplay],
         setThumbsSwiper,
-        thumbsSwiper
+        thumbsSwiper,
+        
       }
     }
   })
@@ -34,14 +35,13 @@
     <div class="carousel">
       
       <img src="../assets/images/iPhone-mokup.png" srcset="../assets/images/iPhone-mokup@2x.png 2x, ../assets/images/iPhone-mokup@3x.png 3x" alt="iPhone" />
+      <img class="fe-test-assets" src="../assets/images/FE-test-assets.svg" alt="FE test assets" />
       <div class="swiper-carousel">
       <swiper
         class="top-swiper"
         :modules="modules"
-        :space-between="10"
-        :loop-fill-group-with-blank="true"
+        :loop="true"
         :effect="'fade'"
-        :navigation="true"
         :thumbs="{ swiper: thumbsSwiper }"
         :autoplay="{
           delay: 2500,
@@ -57,6 +57,9 @@
         <swiper-slide>
           <img src="../assets/images/carousel-photo-03.jpg" srcset="../assets/images/carousel-photo-03@2x.jpg 2x, ../assets/images/carousel-photo-03@3x.jpg 3x" alt="Carousel Photo 3" />
         </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/carousel-photo-04.jpg" srcset="../assets/images/carousel-photo-04@2x.jpg 2x, ../assets/images/carousel-photo-04@3x.jpg 3x" alt="Carousel Photo 4" />
+        </swiper-slide>
       </swiper>
 
       <swiper
@@ -65,8 +68,9 @@
         :space-between="10"
         :slides-per-view="3"
         :effect="'fade'"
+        :centeredSlides="true"
+        :pagination="{ clickable: true }"
         :loop="true"
-        :loop-fill-group-with-blank="true"
         :autoplay="{
           delay: 2500,
           disableOnInteraction: false
@@ -76,6 +80,10 @@
         :prevent-clicks-propagation="false"
         @swiper="setThumbsSwiper"
       >
+      
+        <swiper-slide>
+          <img src="../assets/images/small-carousel-photo-04.jpg" srcset="../assets/images/small-carousel-photo-04@2x.jpg 2x, ../assets/images/small-carousel-photo-04@3x.jpg 3x" alt="Small Carousel Photo 4" />
+        </swiper-slide>
         <swiper-slide>
           <img src="../assets/images/small-carousel-photo-01.jpg" srcset="../assets/images/small-carousel-photo-01@2x.jpg 2x, ../assets/images/small-carousel-photo-01@3x.jpg 3x" alt="Small Carousel Photo 1" />
         </swiper-slide>
