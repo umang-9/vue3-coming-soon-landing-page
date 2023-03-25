@@ -154,6 +154,12 @@ header {
 .sign-up-form form input[type="email"] {
   padding-right: 40px;
 }
+.form-control-wrap label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+}
 .form-button {
   border-radius: 6px;
   display: inline-block;
@@ -174,6 +180,21 @@ header {
 }
 .form-button .btn-primary {
   border: none;
+}
+.carousel {
+    position: relative;
+}
+.swiper-carousel {
+  position: absolute;
+  top: 117px;
+  left: 14px;
+  right: 0;
+}
+.swiper.thumbs-swiper {
+  position: absolute;
+  left: 13px;
+  bottom: -90px;
+  right: 0;
 }
 /* Main page content css end  */
 
