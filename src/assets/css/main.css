@@ -296,17 +296,53 @@ label#placeholder {
 .swiper-pagination-bullet:last-child {
   margin-right: 0px;
 }
-/* .swiper-button-prev {
+.swiper-slide {
+  opacity: 0;
+}
+.swiper-slide.swiper-slide-active {
+  animation: fadeIn 8s;
+  -webkit-animation: fadeIn 8s;
+  -moz-animation: fadeIn 8s;
+  -o-animation: fadeIn 8s;
+  -ms-animation: fadeIn 8s;
+  /* transition: opacity 0.8s ease-in-out; */
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.swiper {
+  overflow: visible;
+  background-color: black;
+}
+.swiper-button-prev {
   display: none;
 }
 .swiper-button-next {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-color: #fff;
-  left: 165px;
-  top: 25px;
-  opacity: 0;
-} */
+  left: 172px;
+  top: 638px;
+  opacity: 0 !important;
+  z-index: 1;
+}
 /* Main page content css end  */
 
 @media only screen and (max-width: 1920px) {
@@ -355,6 +391,12 @@ label#placeholder {
   }
   .fe-test-assets {
     bottom: 185px;
+  }
+  .swiper-button-next {
+    width: 55px;
+    height: 55px;
+    left: 135px;
+    top: 502px;
   }
   
 }

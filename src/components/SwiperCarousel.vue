@@ -10,10 +10,23 @@
       :space-between="10"
       :navigation="true"
       :thumbs="{ swiper: thumbsSwiper }"
+      :autoplay="{
+          delay:8000,
+          disableOnInteraction: false
+      }"
     >
-      <swiper-slide class="slide" v-for="index in 8" :key="index">
-        <img :src="`/images/example/${index}.jpg`" />
-      </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/carousel-photo-01.jpg" srcset="../assets/images/carousel-photo-01@2x.jpg 575w, ../assets/images/carousel-photo-01@3x.jpg 1500w" alt="Carousel Photo 1" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/carousel-photo-02.jpg" srcset="../assets/images/carousel-photo-02@2x.jpg 575w, ../assets/images/carousel-photo-02@3x.jpg 1500w" alt="Carousel Photo 2" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/carousel-photo-03.jpg" srcset="../assets/images/carousel-photo-03@2x.jpg 575w, ../assets/images/carousel-photo-03@3x.jpg 1500w" alt="Carousel Photo 3" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/carousel-photo-04.jpg" srcset="../assets/images/carousel-photo-04@2x.jpg 575w, ../assets/images/carousel-photo-04@3x.jpg 1500w" alt="Carousel Photo 4" />
+        </swiper-slide>
     </swiper>
     <swiper
       class="thumbs-swiper"
@@ -21,20 +34,30 @@
       :space-between="10"
       :slides-per-view="4"
       :watch-slides-progress="true"
+      :pagination="{ clickable: false }"  
       :prevent-clicks="false"
       :prevent-clicks-propagation="false"
       @swiper="setThumbsSwiper"
     >
-      <swiper-slide class="slide" v-for="index in 8" :key="index">
-        <img :src="`/images/example/${index}.jpg`" />
-      </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/small-carousel-photo-01.jpg" srcset="../assets/images/small-carousel-photo-01@2x.jpg 575w, ../assets/images/small-carousel-photo-01@3x.jpg 1500w" alt="Small Carousel Photo 1" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/small-carousel-photo-02.jpg" srcset="../assets/images/small-carousel-photo-02@2x.jpg 575w, ../assets/images/small-carousel-photo-02@3x.jpg 1500w" alt="Small Carousel Photo 2" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/small-carousel-photo-03.jpg" srcset="../assets/images/small-carousel-photo-03@2x.jpg 575w, ../assets/images/small-carousel-photo-03@3x.jpg 1500w" alt="Small Carousel Photo 3" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/small-carousel-photo-04.jpg" srcset="../assets/images/small-carousel-photo-04@2x.jpg 575w, ../assets/images/small-carousel-photo-04@3x.jpg 1500w" alt="Small Carousel Photo 4" />
+        </swiper-slide>
     </swiper>
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent, ref } from 'vue'
-  import SwiperClass, { Navigation, Thumbs } from 'swiper'
+  import SwiperClass, { Navigation, Thumbs, Pagination, EffectFade, Autoplay } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'
   import 'swiper/css/navigation'
@@ -54,7 +77,7 @@
       }
 
       return {
-        modules: [Navigation, Thumbs],
+        modules: [Navigation, Thumbs, Pagination, EffectFade, Autoplay],
         setThumbsSwiper,
         thumbsSwiper
       }
