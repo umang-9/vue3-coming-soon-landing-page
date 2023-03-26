@@ -160,14 +160,31 @@ header {
   top: 20px;
   left: 20px;
   font-size: 16px;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+.form-control:focus ~ label,
+.form-control:not(:valid):not(:placeholder-shown) + label {
+    top: 12px;
+    bottom: 0px;
+    left: 16px;
+		font-size: 12px;
+    color: #3A3A3A;
+}
+label#error-msg {
+  display: none;
+  color: #D41C3D;
+}
+label#placeholder {
+  display: block;
 }
 .form-button {
   border-radius: 6px;
   display: inline-block;
   overflow: hidden;
-  /* border: 1px solid transparent; */
+  border: 1px solid transparent;
 }
-/* .form-button:before {
+.form-button:before {
   content: '';
   position: absolute;
   top: 0; 
@@ -178,63 +195,229 @@ header {
   margin: -1px;
   border-radius: inherit; 
   background: linear-gradient(135deg, #D41C3D 0%, #861B83 100%);
-} */
+}
 .form-button .btn-primary {
   border: none;
+  margin: 1px;
+}
+.carousel-wrap {
+  text-align: right;
 }
 .carousel {
     position: relative;
     display: inline-block;
 }
+.iphone-image-wrap {
+  /* width: 539px; */
+  position: relative;
+}
+.iphone-image-wrap:before {
+  content: "";
+  position: absolute;
+  left: -100px;
+  right: -100px;
+  top: -100px;
+  bottom: -100px;
+  display: block;
+  background-image: url('../images/ambient-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.iphone-image,
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .swiper-carousel {
   position: absolute;
-  top: 117px;
-  left: 14px;
+  top: 180px;
+  left: 20px;
   right: 0;
-  width: 306px;
+  width: calc(100% - 40px);
+  width: 500px;
 }
 .swiper.thumbs-swiper {
   position: absolute;
-  left: 13px;
-  bottom: -90px;
-  width: 40px;
+  left: 24px;
+  top: 755px;
+  width: 65px;
   overflow: visible;
 }
 .fe-test-assets {
   position: absolute;
-  bottom: 180px;
+  bottom: 280px;
   left: 0;
   right: 0;
   margin: auto;
   z-index: 2;
 }
-.swiper.thumbs-swiper .swiper-slide {
-  width: 40px !important;
-}
 .swiper-pagination {
   position: absolute;
-  bottom: -105px;
+  bottom: -155px;
   z-index: 1;
   display: flex;
   justify-content: center;
-  left: 25px;
+  left: 95px;
 }
 .swiper-pagination-bullet {
   width: 55px;
   display: inline-block;
-  height: 1px;
+  height: 2px;
   background: #3A3A3A;
   margin-right: 8px;
+  position: relative;
 }
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
+/* .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #fff;
+} */
+.swiper-pagination-bullet:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left:  0;
+  z-index: 2;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active:after {  
+      animation-name: countingBar;
+      animation-duration: 8s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: 1;
+      animation-direction: alternate ;
+      animation-fill-mode:forwards;
+}
+@keyframes countingBar {
+  0% {width: 0;}
+  100% {width:100%;}
 }
 .swiper-pagination-bullet:last-child {
   margin-right: 0px;
 }
+/* .swiper-button-prev {
+  display: none;
+}
+.swiper-button-next {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  left: 165px;
+  top: 25px;
+  opacity: 0;
+} */
 /* Main page content css end  */
 
+@media only screen and (max-width: 1920px) {
+  .iphone-image-wrap {
+    width: 450px;
+  }
+  .swiper-carousel {
+    top: 155px;
+    left: 18px;
+    width: calc(100% - 35px);
+  }
+  .swiper-carousel {
+    top: 155px;
+    left: 18px;
+    width: calc(100% - 35px);
+  }
+  .fe-test-assets {
+    bottom: 225px;
+  }
+  .swiper.thumbs-swiper {
+    top: 620px;
+    left: 15px;
+  }
+  .swiper-pagination {
+    bottom: -130px;
+    left: 70px;
+  }
+}
 
+@media only screen and (max-width: 1600px) {
+  .iphone-image-wrap {
+    width: 350px;
+  }
+  .swiper-carousel {
+    top: 120px;
+    left: 12px;
+    width: calc(100% - 25px);
+  }
+  .swiper.thumbs-swiper {
+    top: 480px;
+    left: 10px;
+  }
+  .swiper-pagination {
+    bottom: -100px;
+    left: 35px;
+  }
+  .fe-test-assets {
+    bottom: 185px;
+  }
+  
+}
+
+@media only screen and (max-width: 1199px) {
+
+  .h1,
+  h1 {
+    font-size: 3rem;
+  }
+
+  .h2,
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .h3,
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  .h4,
+  h4 {
+    font-size: 2rem;
+  }
+
+  .h5,
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  .h6,
+  h6 {
+    font-size: 1rem;
+  }
+  header {
+    padding: 25px 0;
+  }
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .container > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sign-up-form {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .carousel-wrap {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .iphone-image-wrap:before {
+    left: -10px;
+    right: -10px;
+    top: -30px;
+    bottom: -30px;
+  }
+}
 
 /* 
 

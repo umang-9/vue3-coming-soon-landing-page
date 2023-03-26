@@ -1,3 +1,37 @@
+<template>
+  <div class="thumb-example">
+    <swiper
+      class="top-swiper"
+      :style="{
+        '--swiper-navigation-color': '#fff',
+        '--swiper-pagination-color': '#fff'
+      }"
+      :modules="modules"
+      :space-between="10"
+      :navigation="true"
+      :thumbs="{ swiper: thumbsSwiper }"
+    >
+      <swiper-slide class="slide" v-for="index in 8" :key="index">
+        <img :src="`/images/example/${index}.jpg`" />
+      </swiper-slide>
+    </swiper>
+    <swiper
+      class="thumbs-swiper"
+      :modules="modules"
+      :space-between="10"
+      :slides-per-view="4"
+      :watch-slides-progress="true"
+      :prevent-clicks="false"
+      :prevent-clicks-propagation="false"
+      @swiper="setThumbsSwiper"
+    >
+      <swiper-slide class="slide" v-for="index in 8" :key="index">
+        <img :src="`/images/example/${index}.jpg`" />
+      </swiper-slide>
+    </swiper>
+  </div>
+</template>
+
 <script lang="ts">
   import { defineComponent, ref } from 'vue'
   import SwiperClass, { Navigation, Thumbs } from 'swiper'
@@ -9,7 +43,6 @@
   export default defineComponent({
     name: 'swiper-example-thumbs-gallery',
     title: 'Thumbs gallery with Two-way control',
-    // url: import.meta.url,
     components: {
       Swiper,
       SwiperSlide
@@ -29,48 +62,36 @@
   })
 </script>
 
-<template>
-  <div class="swiper-carousel">
-    <swiper
-      class="top-swiper"
-      :modules="modules"
-      :space-between="10"
-      :navigation="true"
-      :thumbs="{ swiper: thumbsSwiper }"
-    >
-      <swiper-slide>
-        <h2>Slide 2</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 3</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 4</h2>
-      </swiper-slide>
+<style>
 
-    </swiper>
+  .thumb-example {
+    height: 480px;
+    background-color: #000;
+  }
 
-    <swiper
-      class="thumbs-swiper"
-      :modules="modules"
-      :space-between="10"
-      :slides-per-view="4"
-      :watch-slides-progress="true"
-      :prevent-clicks="false"
-      :prevent-clicks-propagation="false"
-      @swiper="setThumbsSwiper"
-    >
-      <swiper-slide>
-        <h2>Slide 2</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 3</h2>
-      </swiper-slide>
-      <swiper-slide>
-        <h2>Slide 4</h2>
-      </swiper-slide>
+  .top-swiper,
+  .thumbs-swiper .slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+  .top-swiper {
+    height: 80%;
+    width: 100%;
+  }
 
-    </swiper>
-  </div>
-
-</template>
+  .thumbs-swiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10PX 0;
+  }
+  .thumbs-swipe .slide {
+      width: 25%;
+      height: 100%;
+      opacity: 1;
+  }
+  .thumbs-swipe .slide:not(.swiper-slide-thumb-active) {
+        opacity: 0.4;
+    }
+</style>

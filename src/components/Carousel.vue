@@ -31,10 +31,12 @@
 </script> 
 
 <template>
-  <div class="col-md-4">
+  <div class="col carousel-wrap">
     <div class="carousel">
       
-      <img src="../assets/images/iPhone-mokup.png" srcset="../assets/images/iPhone-mokup@2x.png 2x, ../assets/images/iPhone-mokup@3x.png 3x" alt="iPhone" />
+      <div class="iphone-image-wrap">
+        <img class="iphone-image" src="../assets/images/iPhone-mokup.png" srcset="../assets/images/iPhone-mokup@2x.png 575w, ../assets/images/iPhone-mokup@3x.png 1500w" alt="iPhone" />
+      </div>
       <img class="fe-test-assets" src="../assets/images/FE-test-assets.svg" alt="FE test assets" />
       <div class="swiper-carousel">
       <swiper
@@ -42,6 +44,7 @@
         :modules="modules"
         :loop="true"
         :effect="'fade'"
+        :navigation="true"
         :thumbs="{ swiper: thumbsSwiper }"
         :autoplay="{
           delay: 2500,
@@ -49,16 +52,16 @@
         }"
       >
         <swiper-slide>
-          <img src="../assets/images/carousel-photo-01.jpg" srcset="../assets/images/carousel-photo-01@2x.jpg 2x, ../assets/images/carousel-photo-01@3x.jpg 3x" alt="Carousel Photo 1" />
+          <img src="../assets/images/carousel-photo-01.jpg" srcset="../assets/images/carousel-photo-01@2x.jpg 575w, ../assets/images/carousel-photo-01@3x.jpg 1500w" alt="Carousel Photo 1" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/images/carousel-photo-02.jpg" srcset="../assets/images/carousel-photo-02@2x.jpg 2x, ../assets/images/carousel-photo-02@3x.jpg 3x" alt="Carousel Photo 2" />
+          <img src="../assets/images/carousel-photo-02.jpg" srcset="../assets/images/carousel-photo-02@2x.jpg 575w, ../assets/images/carousel-photo-02@3x.jpg 1500w" alt="Carousel Photo 2" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/images/carousel-photo-03.jpg" srcset="../assets/images/carousel-photo-03@2x.jpg 2x, ../assets/images/carousel-photo-03@3x.jpg 3x" alt="Carousel Photo 3" />
+          <img src="../assets/images/carousel-photo-03.jpg" srcset="../assets/images/carousel-photo-03@2x.jpg 575w, ../assets/images/carousel-photo-03@3x.jpg 1500w" alt="Carousel Photo 3" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/images/carousel-photo-04.jpg" srcset="../assets/images/carousel-photo-04@2x.jpg 2x, ../assets/images/carousel-photo-04@3x.jpg 3x" alt="Carousel Photo 4" />
+          <img src="../assets/images/carousel-photo-04.jpg" srcset="../assets/images/carousel-photo-04@2x.jpg 575w, ../assets/images/carousel-photo-04@3x.jpg 1500w" alt="Carousel Photo 4" />
         </swiper-slide>
       </swiper>
 
@@ -69,7 +72,7 @@
         :slides-per-view="3"
         :effect="'fade'"
         :centeredSlides="true"
-        :pagination="{ clickable: true }"
+        :pagination="{ clickable: false }"
         :loop="true"
         :autoplay="{
           delay: 2500,
@@ -80,18 +83,17 @@
         :prevent-clicks-propagation="false"
         @swiper="setThumbsSwiper"
       >
-      
         <swiper-slide>
-          <img src="../assets/images/small-carousel-photo-04.jpg" srcset="../assets/images/small-carousel-photo-04@2x.jpg 2x, ../assets/images/small-carousel-photo-04@3x.jpg 3x" alt="Small Carousel Photo 4" />
+          <img src="../assets/images/small-carousel-photo-01.jpg" srcset="../assets/images/small-carousel-photo-01@2x.jpg 575w, ../assets/images/small-carousel-photo-01@3x.jpg 1500w" alt="Small Carousel Photo 1" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/images/small-carousel-photo-01.jpg" srcset="../assets/images/small-carousel-photo-01@2x.jpg 2x, ../assets/images/small-carousel-photo-01@3x.jpg 3x" alt="Small Carousel Photo 1" />
+          <img src="../assets/images/small-carousel-photo-02.jpg" srcset="../assets/images/small-carousel-photo-02@2x.jpg 575w, ../assets/images/small-carousel-photo-02@3x.jpg 1500w" alt="Small Carousel Photo 2" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/images/small-carousel-photo-02.jpg" srcset="../assets/images/small-carousel-photo-02@2x.jpg 2x, ../assets/images/small-carousel-photo-02@3x.jpg 3x" alt="Small Carousel Photo 2" />
+          <img src="../assets/images/small-carousel-photo-03.jpg" srcset="../assets/images/small-carousel-photo-03@2x.jpg 575w, ../assets/images/small-carousel-photo-03@3x.jpg 1500w" alt="Small Carousel Photo 3" />
         </swiper-slide>
         <swiper-slide>
-          <img src="../assets/images/small-carousel-photo-03.jpg" srcset="../assets/images/small-carousel-photo-03@2x.jpg 2x, ../assets/images/small-carousel-photo-03@3x.jpg 3x" alt="Small Carousel Photo 3" />
+          <img src="../assets/images/small-carousel-photo-04.jpg" srcset="../assets/images/small-carousel-photo-04@2x.jpg 575w, ../assets/images/small-carousel-photo-04@3x.jpg 1500w" alt="Small Carousel Photo 4" />
         </swiper-slide>
       </swiper>
     </div>

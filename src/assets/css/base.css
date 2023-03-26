@@ -186,7 +186,7 @@ form input[type="email"]:focus {
   border: 1px solid #3A3A3A;
   background-color: #171715;
   box-shadow: none;
-  padding: 16px 20px;
+  padding: 28px 16px 12px;
   color: #EEECEC;
   line-height: 1.4;
   width: 100%;

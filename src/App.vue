@@ -2,14 +2,9 @@
 import SignUpForm from './components/SignUpForm.vue'
 import Carousel from './components/Carousel.vue'
 import Header from './components/Header.vue'
-// import SwiperCarousel from './components/SwiperCarousel.vue'
 import ThankYou from './ThankYou.vue'
-// import router from 'vue-router'
 
-
-const routes = {
-  '/thank-you': ThankYou
-}
+const routes = [{ path: '/thank-you', name: 'ThankYou', }]
 
 </script>
 
@@ -24,7 +19,6 @@ const routes = {
       <div class="container d-flex align-items-center">
         <SignUpForm />
         <Carousel />
-        <!-- <SwiperCarousel /> -->
       </div>
     </div>
     
