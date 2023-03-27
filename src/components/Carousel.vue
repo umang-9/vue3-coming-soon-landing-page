@@ -47,6 +47,7 @@
             :space-between="10"
             :navigation="true"
             :thumbs="{ swiper: thumbsSwiper }"
+            :loop="true"
             :autoplay="{
                 delay:8000,
                 disableOnInteraction: false

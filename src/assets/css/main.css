@@ -116,6 +116,7 @@ header {
 /* Main page content css start  */
 .wrapper {
   padding: 0 0 100px;
+  overflow: hidden;
 }
 .sub-title {
   border-radius: 15px;
@@ -132,8 +133,11 @@ header {
 .title {
   margin-bottom: 30px;
 }
+
+/* Signup form css start */
 .sign-up-form {
   max-width: 440px;
+  z-index: 3;
 }
 .form-control-wrap {
   position: relative;
@@ -200,6 +204,9 @@ label#placeholder {
   border: none;
   margin: 1px;
 }
+/* Signup form css end */
+
+/* Carousel css start */
 .carousel-wrap {
   text-align: right;
 }
@@ -268,9 +275,6 @@ label#placeholder {
   margin-right: 8px;
   position: relative;
 }
-/* .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #fff;
-} */
 .swiper-pagination-bullet:after {
   content: "";
   position: absolute;
@@ -305,7 +309,8 @@ label#placeholder {
   -moz-animation: fadeIn 8s;
   -o-animation: fadeIn 8s;
   -ms-animation: fadeIn 8s;
-  /* transition: opacity 0.8s ease-in-out; */
+  /* opacity: 1;
+  transition: opacity 0.8s ease-in-out; */
 }
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -341,10 +346,35 @@ label#placeholder {
   left: 172px;
   top: 638px;
   opacity: 0 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
   z-index: 1;
 }
+/* Carousel css start */
+
 /* Main page content css end  */
 
+/* Thank you page css start */
+.thank-you-page {
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.thank-you-page h5 {
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.thank-you-page p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* Thank you page css end */
+
+
+/************************************ RESPONSIVE CSS START  ************************************/
 @media only screen and (max-width: 1920px) {
   .iphone-image-wrap {
     width: 450px;
@@ -460,6 +490,7 @@ label#placeholder {
     bottom: -30px;
   }
 }
+/************************************ RESPONSIVE CSS end  ************************************/
 
 /* 
 
